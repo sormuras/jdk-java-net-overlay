@@ -7,8 +7,8 @@ on:
     branches: [ main ]
   workflow_dispatch:
     inputs:
-      arguments:
-        description: 'Program arguments'
+      names:
+        description: 'List JDK uris at https://jdk.java.net/{NAME}/'
         required: false
         type: string
 
@@ -17,4 +17,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: java --show-version src/ListOpenJavaDevelopmentKits.java ${{ github.event.inputs.arguments }}
+      - run: java --show-version src/ListOpenJavaDevelopmentKits.java ${{ github.event.inputs.names }}
