@@ -1,6 +1,8 @@
 name: Update
 
 on:
+  schedule:
+    - cron: '23 */4 * * *'
   workflow_dispatch:
 
 jobs:
@@ -15,7 +17,8 @@ jobs:
           git config user.email github-actions@github.com
           git add .
           if [ -z "$(git status --porcelain)" ]; then
+            echo 'No changes detected.'
             exit 0
           fi
-          git commit --message "Update jdk-uri.properties"
+          git commit --message 'Update `jdk-uri.properties`'
           git push
