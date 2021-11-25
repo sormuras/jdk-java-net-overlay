@@ -13,8 +13,8 @@ on:
         type: string
 
 jobs:
-  build:
+  list:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: java --show-version src/ListOpenJavaDevelopmentKits.java {{ github.event.inputs.arguments }}
+      - run: java --show-version src/ListOpenJavaDevelopmentKits.java ${{ github.event.inputs.arguments }}
