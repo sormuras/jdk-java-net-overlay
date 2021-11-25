@@ -1,0 +1,21 @@
+name: Update
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-jdk-uri-properties:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: java --show-version src/ListOpenJavaDevelopmentKits.java > jdk-uri.properties
+      - run: |
+          git diff
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          if [ -z "$(git status --porcelain)" ]; then
+            exit 0
+          fi
+          git commit --message "Update jdk-uri.properties"
+          git push
