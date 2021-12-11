@@ -16,7 +16,7 @@ class ListOpenJavaDevelopmentKits {
   static final String GA = System.getProperty("GA", "17");
 
   /** Early-Access Releases, as comma separated names. */
-  static final String EA = System.getProperty("EA", "18,loom,metropolis,panama,valhalla");
+  static final String EA = System.getProperty("EA", "19,18,loom,metropolis,panama,valhalla");
 
   /** Shared HTTP client instance. */
   static final HttpClient HTTP_CLIENT =
