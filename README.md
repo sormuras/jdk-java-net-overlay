@@ -22,5 +22,5 @@ Run `java src/ListOpenJavaDevelopmentKits.java` to parse a set of default pages 
 at <https://jdk.java.net> and print all key-value pairs, including aliases.
 Consult [src/ListOpenJavaDevelopmentKits.java](src/ListOpenJavaDevelopmentKits.java) for details.
 
-Run `java src/ListOpenJavaDevelopmentKits.java PAGE [MORE...]` to parse <https://jdk.java.net/PAGE/>
+Run `java src/ListOpenJavaDevelopmentKits.java PAGE [MORE...]` to parse `https://jdk.java.net/PAGE`
 only and print key-value pairs found on that particular page.
